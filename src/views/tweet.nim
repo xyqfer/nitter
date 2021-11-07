@@ -94,8 +94,6 @@ proc renderVideo*(video: Video; prefs: Prefs; path: string): VNode =
         let thumb = getSmallPic(video.thumb)
         if not video.available:
           renderVideoUnavailable(video)
-        elif not prefs.isPlaybackEnabled(video):
-          renderVideoDisabled(video, path)
         else:
           let vid = video.variants.filterIt(it.videoType == video.playbackType)
           let source = getVidUrl(vid[0].url)
