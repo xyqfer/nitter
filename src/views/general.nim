@@ -60,9 +60,8 @@ proc renderHead*(prefs: Prefs; cfg: Config; titleText=""; desc=""; video="";
     if rss.len > 0:
       link(rel="alternate", type="application/rss+xml", href=rss, title="RSS feed")
 
-    if prefs.hlsPlayback:
-      script(src="/js/hls.light.min.js", `defer`="")
-      script(src="/js/hlsPlayback.js", `defer`="")
+    script(src="/js/hls.light.min.js", `defer`="")
+    script(src="/js/hlsPlayback.js", `defer`="")  
 
     if prefs.infiniteScroll:
       script(src="/js/infiniteScroll.js", `defer`="")
